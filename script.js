@@ -16,6 +16,7 @@ function closeModal(){
 
 function generateCards(){
     const todoListHtml = todoList.map(function(task){
+        const formattedDate = moment(task.deadLine).format('DD/MM/YYYY');
         return `
         <div class="card"> 
          <div class="info">
@@ -30,8 +31,8 @@ function generateCards(){
          </div>
 
          <div class="info">
-            <b>Prazo</b>
-            <span>${task.deadLine}</span>
+            <b>Prazo:</b>
+            <span>${formattedDate}</span>
          </div>
          </div>
         
